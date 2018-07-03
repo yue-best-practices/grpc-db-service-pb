@@ -60,14 +60,14 @@ message updateResponse{
     bool result=1;
 }
 
-// delete
-message deleteRequest{
+// del
+message delRequest{
     string dataSource=1;
     string table=2;
     string id=3;
 }
 
-message deleteResponse{
+message delResponse{
     bool result=1;
 }
 
@@ -137,7 +137,7 @@ service DbService{
     rpc list(listRequest) returns (listResponse){}
     rpc save(saveRequest) returns (saveResponse){}
     rpc update(updateRequest) returns (updateResponse){}
-    rpc delete(deleteRequest) returns (deleteResponse){}
+    rpc del(delRequest) returns (delResponse){}
     rpc multiGet(multiGetRequest) returns (multiGetResponse){}
     rpc toOne(toOneRequest) returns (toOneResponse){}
     rpc toMany(toManyRequest) returns (toManyResponse){}

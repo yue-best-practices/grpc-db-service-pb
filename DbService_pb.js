@@ -13,8 +13,8 @@ var global = Function('return this')();
 
 goog.exportSymbol('proto.com.yue.dbservice.countRequest', null, global);
 goog.exportSymbol('proto.com.yue.dbservice.countResponse', null, global);
-goog.exportSymbol('proto.com.yue.dbservice.deleteRequest', null, global);
-goog.exportSymbol('proto.com.yue.dbservice.deleteResponse', null, global);
+goog.exportSymbol('proto.com.yue.dbservice.delRequest', null, global);
+goog.exportSymbol('proto.com.yue.dbservice.delResponse', null, global);
 goog.exportSymbol('proto.com.yue.dbservice.getOneRequest', null, global);
 goog.exportSymbol('proto.com.yue.dbservice.getOneResponse', null, global);
 goog.exportSymbol('proto.com.yue.dbservice.getRequest', null, global);
@@ -1817,12 +1817,12 @@ proto.com.yue.dbservice.updateResponse.prototype.setResult = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.com.yue.dbservice.deleteRequest = function(opt_data) {
+proto.com.yue.dbservice.delRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.com.yue.dbservice.deleteRequest, jspb.Message);
+goog.inherits(proto.com.yue.dbservice.delRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.com.yue.dbservice.deleteRequest.displayName = 'proto.com.yue.dbservice.deleteRequest';
+  proto.com.yue.dbservice.delRequest.displayName = 'proto.com.yue.dbservice.delRequest';
 }
 
 
@@ -1837,8 +1837,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.com.yue.dbservice.deleteRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.com.yue.dbservice.deleteRequest.toObject(opt_includeInstance, this);
+proto.com.yue.dbservice.delRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.com.yue.dbservice.delRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1847,11 +1847,11 @@ proto.com.yue.dbservice.deleteRequest.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.com.yue.dbservice.deleteRequest} msg The msg instance to transform.
+ * @param {!proto.com.yue.dbservice.delRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.com.yue.dbservice.deleteRequest.toObject = function(includeInstance, msg) {
+proto.com.yue.dbservice.delRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     datasource: jspb.Message.getFieldWithDefault(msg, 1, ""),
     table: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -1869,23 +1869,23 @@ proto.com.yue.dbservice.deleteRequest.toObject = function(includeInstance, msg) 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.com.yue.dbservice.deleteRequest}
+ * @return {!proto.com.yue.dbservice.delRequest}
  */
-proto.com.yue.dbservice.deleteRequest.deserializeBinary = function(bytes) {
+proto.com.yue.dbservice.delRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.com.yue.dbservice.deleteRequest;
-  return proto.com.yue.dbservice.deleteRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.com.yue.dbservice.delRequest;
+  return proto.com.yue.dbservice.delRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.com.yue.dbservice.deleteRequest} msg The message object to deserialize into.
+ * @param {!proto.com.yue.dbservice.delRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.com.yue.dbservice.deleteRequest}
+ * @return {!proto.com.yue.dbservice.delRequest}
  */
-proto.com.yue.dbservice.deleteRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.com.yue.dbservice.delRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1917,9 +1917,9 @@ proto.com.yue.dbservice.deleteRequest.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.com.yue.dbservice.deleteRequest.prototype.serializeBinary = function() {
+proto.com.yue.dbservice.delRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.com.yue.dbservice.deleteRequest.serializeBinaryToWriter(this, writer);
+  proto.com.yue.dbservice.delRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1927,11 +1927,11 @@ proto.com.yue.dbservice.deleteRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.com.yue.dbservice.deleteRequest} message
+ * @param {!proto.com.yue.dbservice.delRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.com.yue.dbservice.deleteRequest.serializeBinaryToWriter = function(message, writer) {
+proto.com.yue.dbservice.delRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDatasource();
   if (f.length > 0) {
@@ -1961,13 +1961,13 @@ proto.com.yue.dbservice.deleteRequest.serializeBinaryToWriter = function(message
  * optional string dataSource = 1;
  * @return {string}
  */
-proto.com.yue.dbservice.deleteRequest.prototype.getDatasource = function() {
+proto.com.yue.dbservice.delRequest.prototype.getDatasource = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.com.yue.dbservice.deleteRequest.prototype.setDatasource = function(value) {
+proto.com.yue.dbservice.delRequest.prototype.setDatasource = function(value) {
   jspb.Message.setField(this, 1, value);
 };
 
@@ -1976,13 +1976,13 @@ proto.com.yue.dbservice.deleteRequest.prototype.setDatasource = function(value) 
  * optional string table = 2;
  * @return {string}
  */
-proto.com.yue.dbservice.deleteRequest.prototype.getTable = function() {
+proto.com.yue.dbservice.delRequest.prototype.getTable = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.com.yue.dbservice.deleteRequest.prototype.setTable = function(value) {
+proto.com.yue.dbservice.delRequest.prototype.setTable = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 
@@ -1991,13 +1991,13 @@ proto.com.yue.dbservice.deleteRequest.prototype.setTable = function(value) {
  * optional string id = 3;
  * @return {string}
  */
-proto.com.yue.dbservice.deleteRequest.prototype.getId = function() {
+proto.com.yue.dbservice.delRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.com.yue.dbservice.deleteRequest.prototype.setId = function(value) {
+proto.com.yue.dbservice.delRequest.prototype.setId = function(value) {
   jspb.Message.setField(this, 3, value);
 };
 
@@ -2013,12 +2013,12 @@ proto.com.yue.dbservice.deleteRequest.prototype.setId = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.com.yue.dbservice.deleteResponse = function(opt_data) {
+proto.com.yue.dbservice.delResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.com.yue.dbservice.deleteResponse, jspb.Message);
+goog.inherits(proto.com.yue.dbservice.delResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.com.yue.dbservice.deleteResponse.displayName = 'proto.com.yue.dbservice.deleteResponse';
+  proto.com.yue.dbservice.delResponse.displayName = 'proto.com.yue.dbservice.delResponse';
 }
 
 
@@ -2033,8 +2033,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.com.yue.dbservice.deleteResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.com.yue.dbservice.deleteResponse.toObject(opt_includeInstance, this);
+proto.com.yue.dbservice.delResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.com.yue.dbservice.delResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2043,11 +2043,11 @@ proto.com.yue.dbservice.deleteResponse.prototype.toObject = function(opt_include
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.com.yue.dbservice.deleteResponse} msg The msg instance to transform.
+ * @param {!proto.com.yue.dbservice.delResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.com.yue.dbservice.deleteResponse.toObject = function(includeInstance, msg) {
+proto.com.yue.dbservice.delResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     result: jspb.Message.getFieldWithDefault(msg, 1, false)
   };
@@ -2063,23 +2063,23 @@ proto.com.yue.dbservice.deleteResponse.toObject = function(includeInstance, msg)
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.com.yue.dbservice.deleteResponse}
+ * @return {!proto.com.yue.dbservice.delResponse}
  */
-proto.com.yue.dbservice.deleteResponse.deserializeBinary = function(bytes) {
+proto.com.yue.dbservice.delResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.com.yue.dbservice.deleteResponse;
-  return proto.com.yue.dbservice.deleteResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.com.yue.dbservice.delResponse;
+  return proto.com.yue.dbservice.delResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.com.yue.dbservice.deleteResponse} msg The message object to deserialize into.
+ * @param {!proto.com.yue.dbservice.delResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.com.yue.dbservice.deleteResponse}
+ * @return {!proto.com.yue.dbservice.delResponse}
  */
-proto.com.yue.dbservice.deleteResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.com.yue.dbservice.delResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2103,9 +2103,9 @@ proto.com.yue.dbservice.deleteResponse.deserializeBinaryFromReader = function(ms
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.com.yue.dbservice.deleteResponse.prototype.serializeBinary = function() {
+proto.com.yue.dbservice.delResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.com.yue.dbservice.deleteResponse.serializeBinaryToWriter(this, writer);
+  proto.com.yue.dbservice.delResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2113,11 +2113,11 @@ proto.com.yue.dbservice.deleteResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.com.yue.dbservice.deleteResponse} message
+ * @param {!proto.com.yue.dbservice.delResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.com.yue.dbservice.deleteResponse.serializeBinaryToWriter = function(message, writer) {
+proto.com.yue.dbservice.delResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getResult();
   if (f) {
@@ -2135,13 +2135,13 @@ proto.com.yue.dbservice.deleteResponse.serializeBinaryToWriter = function(messag
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.com.yue.dbservice.deleteResponse.prototype.getResult = function() {
+proto.com.yue.dbservice.delResponse.prototype.getResult = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
 };
 
 
 /** @param {boolean} value */
-proto.com.yue.dbservice.deleteResponse.prototype.setResult = function(value) {
+proto.com.yue.dbservice.delResponse.prototype.setResult = function(value) {
   jspb.Message.setField(this, 1, value);
 };
 

@@ -26,26 +26,26 @@ function deserialize_com_yue_dbservice_countResponse(buffer_arg) {
   return DbService_pb.countResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_com_yue_dbservice_deleteRequest(arg) {
-  if (!(arg instanceof DbService_pb.deleteRequest)) {
-    throw new Error('Expected argument of type com.yue.dbservice.deleteRequest');
+function serialize_com_yue_dbservice_delRequest(arg) {
+  if (!(arg instanceof DbService_pb.delRequest)) {
+    throw new Error('Expected argument of type com.yue.dbservice.delRequest');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_com_yue_dbservice_deleteRequest(buffer_arg) {
-  return DbService_pb.deleteRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_com_yue_dbservice_delRequest(buffer_arg) {
+  return DbService_pb.delRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_com_yue_dbservice_deleteResponse(arg) {
-  if (!(arg instanceof DbService_pb.deleteResponse)) {
-    throw new Error('Expected argument of type com.yue.dbservice.deleteResponse');
+function serialize_com_yue_dbservice_delResponse(arg) {
+  if (!(arg instanceof DbService_pb.delResponse)) {
+    throw new Error('Expected argument of type com.yue.dbservice.delResponse');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_com_yue_dbservice_deleteResponse(buffer_arg) {
-  return DbService_pb.deleteResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_com_yue_dbservice_delResponse(buffer_arg) {
+  return DbService_pb.delResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_com_yue_dbservice_getOneRequest(arg) {
@@ -303,16 +303,16 @@ var DbServiceService = exports.DbServiceService = {
     responseSerialize: serialize_com_yue_dbservice_updateResponse,
     responseDeserialize: deserialize_com_yue_dbservice_updateResponse,
   },
-  delete: {
-    path: '/com.yue.dbservice.DbService/delete',
+  del: {
+    path: '/com.yue.dbservice.DbService/del',
     requestStream: false,
     responseStream: false,
-    requestType: DbService_pb.deleteRequest,
-    responseType: DbService_pb.deleteResponse,
-    requestSerialize: serialize_com_yue_dbservice_deleteRequest,
-    requestDeserialize: deserialize_com_yue_dbservice_deleteRequest,
-    responseSerialize: serialize_com_yue_dbservice_deleteResponse,
-    responseDeserialize: deserialize_com_yue_dbservice_deleteResponse,
+    requestType: DbService_pb.delRequest,
+    responseType: DbService_pb.delResponse,
+    requestSerialize: serialize_com_yue_dbservice_delRequest,
+    requestDeserialize: deserialize_com_yue_dbservice_delRequest,
+    responseSerialize: serialize_com_yue_dbservice_delResponse,
+    responseDeserialize: deserialize_com_yue_dbservice_delResponse,
   },
   multiGet: {
     path: '/com.yue.dbservice.DbService/multiGet',
