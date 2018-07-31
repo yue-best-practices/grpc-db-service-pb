@@ -2195,7 +2195,8 @@ proto.com.yue.dbservice.multiGetRequest.toObject = function(includeInstance, msg
   var f, obj = {
     datasource: jspb.Message.getFieldWithDefault(msg, 1, ""),
     table: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 3, "")
+    id: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    field: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2243,6 +2244,10 @@ proto.com.yue.dbservice.multiGetRequest.deserializeBinaryFromReader = function(m
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setField(value);
       break;
     default:
       reader.skipField();
@@ -2294,6 +2299,13 @@ proto.com.yue.dbservice.multiGetRequest.serializeBinaryToWriter = function(messa
       f
     );
   }
+  f = message.getField();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
 };
 
 
@@ -2339,6 +2351,21 @@ proto.com.yue.dbservice.multiGetRequest.prototype.getId = function() {
 /** @param {string} value */
 proto.com.yue.dbservice.multiGetRequest.prototype.setId = function(value) {
   jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional string field = 4;
+ * @return {string}
+ */
+proto.com.yue.dbservice.multiGetRequest.prototype.getField = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.com.yue.dbservice.multiGetRequest.prototype.setField = function(value) {
+  jspb.Message.setField(this, 4, value);
 };
 
 

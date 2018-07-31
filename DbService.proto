@@ -76,6 +76,7 @@ message multiGetRequest{
     string dataSource=1;
     string table=2;
     string id=3;
+    string field=4;
 }
 
 message multiGetResponse{
