@@ -135,7 +135,8 @@ message sumResponse{
 // query
 message queryRequest{
     string dataSource=1;
-    string where=2;
+    string rawQuery=2;
+    string where=3;
 }
 
 message queryResponse{

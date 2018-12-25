@@ -4048,7 +4048,8 @@ proto.com.yue.dbservice.queryRequest.prototype.toObject = function(opt_includeIn
 proto.com.yue.dbservice.queryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     datasource: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    where: jspb.Message.getFieldWithDefault(msg, 2, "")
+    rawquery: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    where: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4091,6 +4092,10 @@ proto.com.yue.dbservice.queryRequest.deserializeBinaryFromReader = function(msg,
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
+      msg.setRawquery(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
       msg.setWhere(value);
       break;
     default:
@@ -4129,10 +4134,17 @@ proto.com.yue.dbservice.queryRequest.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getWhere();
+  f = message.getRawquery();
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getWhere();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -4155,17 +4167,32 @@ proto.com.yue.dbservice.queryRequest.prototype.setDatasource = function(value) {
 
 
 /**
- * optional string where = 2;
+ * optional string rawQuery = 2;
  * @return {string}
  */
-proto.com.yue.dbservice.queryRequest.prototype.getWhere = function() {
+proto.com.yue.dbservice.queryRequest.prototype.getRawquery = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.com.yue.dbservice.queryRequest.prototype.setWhere = function(value) {
+proto.com.yue.dbservice.queryRequest.prototype.setRawquery = function(value) {
   jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional string where = 3;
+ * @return {string}
+ */
+proto.com.yue.dbservice.queryRequest.prototype.getWhere = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/** @param {string} value */
+proto.com.yue.dbservice.queryRequest.prototype.setWhere = function(value) {
+  jspb.Message.setField(this, 3, value);
 };
 
 
