@@ -136,6 +136,28 @@ function deserialize_com_yue_dbservice_multiGetResponse(buffer_arg) {
   return DbService_pb.multiGetResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_com_yue_dbservice_queryRequest(arg) {
+  if (!(arg instanceof DbService_pb.queryRequest)) {
+    throw new Error('Expected argument of type com.yue.dbservice.queryRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_com_yue_dbservice_queryRequest(buffer_arg) {
+  return DbService_pb.queryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_com_yue_dbservice_queryResponse(arg) {
+  if (!(arg instanceof DbService_pb.queryResponse)) {
+    throw new Error('Expected argument of type com.yue.dbservice.queryResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_com_yue_dbservice_queryResponse(buffer_arg) {
+  return DbService_pb.queryResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_com_yue_dbservice_saveRequest(arg) {
   if (!(arg instanceof DbService_pb.saveRequest)) {
     throw new Error('Expected argument of type com.yue.dbservice.saveRequest');
@@ -368,6 +390,17 @@ var DbServiceService = exports.DbServiceService = {
     requestDeserialize: deserialize_com_yue_dbservice_sumRequest,
     responseSerialize: serialize_com_yue_dbservice_sumResponse,
     responseDeserialize: deserialize_com_yue_dbservice_sumResponse,
+  },
+  query: {
+    path: '/com.yue.dbservice.DbService/query',
+    requestStream: false,
+    responseStream: false,
+    requestType: DbService_pb.queryRequest,
+    responseType: DbService_pb.queryResponse,
+    requestSerialize: serialize_com_yue_dbservice_queryRequest,
+    requestDeserialize: deserialize_com_yue_dbservice_queryRequest,
+    responseSerialize: serialize_com_yue_dbservice_queryResponse,
+    responseDeserialize: deserialize_com_yue_dbservice_queryResponse,
   },
 };
 
